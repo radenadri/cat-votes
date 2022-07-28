@@ -1,5 +1,3 @@
-<h1 align="center">Laravel Breeze + Beyond</h1>
+# Laravel Breeze + Beyond
 
-<p align="center">
-    docs coming soon
-</p>
+docs coming soon
