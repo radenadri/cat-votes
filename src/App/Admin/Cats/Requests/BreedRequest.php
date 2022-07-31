@@ -11,7 +11,7 @@ class BreedRequest extends FormRequest
         return [
             'name' => 'required',
             'description' => 'required',
-            'is_active' => 'required'
+            'is_active' => 'required',
         ];
     }
 }

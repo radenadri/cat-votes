@@ -2,9 +2,9 @@
 
 namespace App\Admin\Users\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;

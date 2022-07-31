@@ -24,7 +24,7 @@ class BreedController extends Controller
     public function index()
     {
         return Inertia::render('Cats/Breed/Index', [
-            'breeds' => Breed::latest()->paginate(10)
+            'breeds' => Breed::latest()->paginate(10),
         ]);
     }
 
@@ -44,7 +44,7 @@ class BreedController extends Controller
         ]);
     }
 
-    public function store(BreedRequest $request) : RedirectResponse
+    public function store(BreedRequest $request): RedirectResponse
     {
         $validated = BreedData::fromRequest($request);
 

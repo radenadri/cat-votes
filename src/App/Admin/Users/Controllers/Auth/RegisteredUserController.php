@@ -2,11 +2,11 @@
 
 namespace App\Admin\Users\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use App\Providers\RouteServiceProvider;
 use Domain\Users\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;

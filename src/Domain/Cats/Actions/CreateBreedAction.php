@@ -19,7 +19,7 @@ class CreateBreedAction
         Breed::insert([
             'name' => $this->breedData->name,
             'description' => $this->breedData->description,
-            'is_active' => $this->breedData->is_active
+            'is_active' => $this->breedData->is_active,
         ]);
     }
 }

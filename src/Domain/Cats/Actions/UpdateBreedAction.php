@@ -8,6 +8,7 @@ use Domain\Cats\Models\Breed;
 class UpdateBreedAction
 {
     public $breed;
+
     public $breedData;
 
     public function __construct(Breed $breed, BreedData $breedData)

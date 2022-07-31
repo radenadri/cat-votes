@@ -8,6 +8,7 @@ use Spatie\ViewModels\ViewModel;
 class BreedViewModel extends ViewModel
 {
     public $breed;
+
     public $url;
 
     public function __construct(Breed $breed = null, string $url = null)

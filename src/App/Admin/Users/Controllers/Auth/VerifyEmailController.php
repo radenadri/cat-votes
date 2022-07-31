@@ -2,10 +2,10 @@
 
 namespace App\Admin\Users\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Routing\Controller;
 
 class VerifyEmailController extends Controller
 {

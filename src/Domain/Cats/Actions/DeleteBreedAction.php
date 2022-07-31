@@ -8,7 +8,8 @@ class DeleteBreedAction
 {
     public $breed;
 
-    public function __construct(Breed $breed) {
+    public function __construct(Breed $breed)
+    {
         $this->breed = $breed;
     }
 

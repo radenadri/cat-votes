@@ -13,7 +13,7 @@ class BreedData extends DataTransferObject
     /** @var string */
     public $description;
 
-    /** @var boolean */
+    /** @var bool */
     public $is_active;
 
     public static function fromRequest(BreedRequest $request): self
