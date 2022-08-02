@@ -134,6 +134,8 @@ export default function Authenticated({ auth, header, children }) {
             )}
 
             <main>{children}</main>
+
+            <div id="portal-root"></div>
         </div>
     );
 }
