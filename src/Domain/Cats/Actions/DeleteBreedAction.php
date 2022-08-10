@@ -6,14 +6,8 @@ use Domain\Cats\Models\Breed;
 
 class DeleteBreedAction
 {
-    public $breed;
-
-    public function __construct(Breed $breed) {
-        $this->breed = $breed;
-    }
-
-    public function execute()
+    public function execute(Breed $breed)
     {
-        $this->breed->delete();
+        $breed->delete();
     }
 }

@@ -4,7 +4,7 @@ namespace App\Admin\Cats\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BreedRequest extends FormRequest
+class CatRequest extends FormRequest
 {
     public function rules(): array
     {
@@ -12,6 +12,8 @@ class BreedRequest extends FormRequest
             'name' => 'required',
             'description' => 'required',
             'is_active' => 'required',
+            'breed_id' => 'required|exists:breeds,id',
+            'avatar' => 'nullable|image|mimes:png,jpg',
         ];
     }
 }

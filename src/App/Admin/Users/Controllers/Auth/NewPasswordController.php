@@ -2,9 +2,9 @@
 
 namespace App\Admin\Users\Controllers\Auth;
 
-use Illuminate\Routing\Controller;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
