@@ -1,6 +1,7 @@
 <?php
 
 use App\Admin\Cats\Controllers\BreedController;
+use App\Admin\Cats\Controllers\CatController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Breed
-Route::resource('breed', BreedController::class);
+Route::middleware(['auth', 'verified'])->group(function() {
+    // Breed
+    Route::resource('breed', BreedController::class);
+    // Cat
+    Route::resource('cat', CatController::class);
+});

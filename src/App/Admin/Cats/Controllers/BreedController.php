@@ -44,11 +44,11 @@ class BreedController extends Controller
         ]);
     }
 
-    public function store(BreedRequest $request): RedirectResponse
+    public function store(BreedRequest $request, CreateBreedAction $createBreedAction)
     {
-        $validated = BreedData::fromRequest($request);
+        $data = BreedData::fromRequest($request);
 
-        (new CreateBreedAction($validated))->execute();
+        $createBreedAction->execute($data);
 
         return Redirect::route('breed.index')->with('message', 'Breed saved!');
     }
@@ -67,22 +67,18 @@ class BreedController extends Controller
         ]);
     }
 
-    public function update(Breed $breed, BreedRequest $request)
+    public function update(Breed $breed, BreedRequest $request, UpdateBreedAction $updateBreedAction)
     {
         $validated = BreedData::fromRequest($request);
 
-        $updateBreed = new UpdateBreedAction(
-            breed: $breed,
-            breedData: $validated
-        );
-        $updateBreed->execute();
+        $updateBreedAction->execute($breed, $validated);
 
         return Redirect::route('breed.index')->with('message', 'Breed updated!');
     }
 
-    public function destroy(Breed $breed)
+    public function destroy(Breed $breed, DeleteBreedAction $deleteBreedAction)
     {
-        (new DeleteBreedAction($breed))->execute();
+        $deleteBreedAction->execute($breed);
 
         return Redirect::route('breed.index')->with('message', 'Breed deleted!');
     }

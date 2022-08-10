@@ -21,7 +21,7 @@ class Breed extends Model
         'is_active',
     ];
 
-    public function newEloquentBuilder($query)
+    public function newEloquentBuilder($query) : BreedQueryBuilder
     {
         return new BreedQueryBuilder($query);
     }
@@ -29,5 +29,10 @@ class Breed extends Model
     public function newCollection(array $models = [])
     {
         return new BreedCollection($models);
+    }
+
+    public function cats()
+    {
+        return $this->hasMany(Cat::class);
     }
 }

@@ -17,6 +17,10 @@ export default function Authenticated({ auth, header, children }) {
         })
     });
 
+    useEffect(() => {
+        if (!auth) Inertia.visit(route('login'));
+    }, [auth]);
+
     return (
         <div className="min-h-screen bg-gray-100">
             <ToastContainer />
@@ -37,7 +41,7 @@ export default function Authenticated({ auth, header, children }) {
                                 <NavLink href={route('breed.index')} active={route().current('breed.index')}>
                                     Breed
                                 </NavLink>
-                                <NavLink href="#" active="">
+                                <NavLink href={route('cat.index')} active={route().current('cat.index')}>
                                     Cats
                                 </NavLink>
                             </div>
@@ -52,7 +56,7 @@ export default function Authenticated({ auth, header, children }) {
                                                 type="button"
                                                 className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-gray-700 focus:outline-none"
                                             >
-                                                {auth.user.name}
+                                                {auth?.user.name}
 
                                                 <svg
                                                     className="ml-2 -mr-0.5 h-4 w-4"

@@ -4,14 +4,14 @@ import { ExclamationIcon } from '@heroicons/react/outline'
 import { Inertia } from '@inertiajs/inertia'
 import Portal from './Portal'
 
-export default function DeleteModal({ breed }) {
+export default function DeleteModal({ url, id, name }) {
     const [open, setOpen] = useState(false)
 
     const cancelButtonRef = useRef(null)
 
-    const handleDelete = (breed) => {
+    const handleDelete = () => {
         setOpen(false);
-        Inertia.delete(route('breed.destroy', breed.id))
+        Inertia.delete(route(url, id))
     }
 
     return (
@@ -53,7 +53,7 @@ export default function DeleteModal({ breed }) {
                                 </div>
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                 <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
-                                    Delete {breed.name}
+                                    Delete {name}
                                 </Dialog.Title>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
@@ -67,7 +67,7 @@ export default function DeleteModal({ breed }) {
                                 <button
                                 type="button"
                                 className="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-                                onClick={() => handleDelete(breed)}
+                                onClick={handleDelete}
                                 >
                                 Yes, Delete now
                                 </button>
