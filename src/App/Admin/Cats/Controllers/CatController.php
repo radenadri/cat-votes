@@ -24,7 +24,7 @@ class CatController extends Controller
     public function index()
     {
         return Inertia::render('Cats/Cat/Index', [
-            'cats' => Cat::with('breed', 'owner')->latest()->paginate(10),
+            'cats' => Cat::with('breed', 'owner')->myself()->latest()->paginate(10),
         ]);
     }
 
