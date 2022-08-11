@@ -2,6 +2,7 @@
 
 namespace Domain\Cats\Models;
 
+use Domain\Cats\QueryBuilders\CatQueryBuilder;
 use Domain\Users\Models\User;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,6 +21,11 @@ class Cat extends Model implements HasMedia
     protected $guarded = [
         'id',
     ];
+
+    public function newEloquentBuilder($query) : CatQueryBuilder
+    {
+        return new CatQueryBuilder($query);
+    }
 
     public function breed()
     {
